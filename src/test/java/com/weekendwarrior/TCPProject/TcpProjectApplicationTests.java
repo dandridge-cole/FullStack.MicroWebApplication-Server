@@ -1,4 +1,4 @@
-package com.example.TCPProject;
+package com.weekendwarrior.TCPProject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
