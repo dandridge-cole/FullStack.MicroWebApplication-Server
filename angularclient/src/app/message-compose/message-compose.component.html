@@ -1,6 +1,13 @@
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Input Message To send"  aria-describedby="basic-addon2">
+
+<div class="input-group">
+
+  <input type="text" class="form-control" [(ngModel)]="message.body" placeholder="Please enter a message to send."
+  #body = "ngModel">
+
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button">Send</button>
+    <button (click)="onSubmit()" type="button" class="btn btn-outline-secondary">Send</button>
   </div>
+
 </div>
+
+
