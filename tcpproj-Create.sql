@@ -16,6 +16,7 @@ CREATE TABLE tcpproj.messages(
 	id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
     fromUser INTEGER,
     toChannel INTEGER,
+    body VARCHAR(255),
     FOREIGN KEY(fromUser) REFERENCES users(id),
     FOREIGN KEY(toChannel) REFERENCES channels(id)
 );
