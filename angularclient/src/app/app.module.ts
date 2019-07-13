@@ -10,9 +10,7 @@ import { MessageComposeComponent } from './message-compose/message-compose.compo
 @NgModule({
   declarations: [
     AppComponent,
-
     LoginbarComponent,
-
     MessageComposeComponent
   ],
   imports: [
