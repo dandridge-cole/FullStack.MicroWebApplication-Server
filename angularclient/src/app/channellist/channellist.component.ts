@@ -8,8 +8,8 @@ import {User} from '../user';
   styleUrls: ['./channellist.component.css']
 })
 export class ChannellistComponent implements OnInit {
-  channels = CHANNELS;
-  users = USERS;
+  // channels = CHANNELS;
+  // users = USERS;
 
   selectedChannel: Channel;
   selectedUser: User;
