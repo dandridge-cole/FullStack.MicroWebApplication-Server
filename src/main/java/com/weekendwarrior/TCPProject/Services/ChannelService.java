@@ -21,4 +21,9 @@ public class ChannelService {
         return channelRepository.findAll();
     }
 
+    public Channel getChannelById(Integer id){
+
+        return channelRepository.getById(id);
+    }
+
 }
