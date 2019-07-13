@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class MessageController {
 
     @Autowired
@@ -18,8 +19,8 @@ public class MessageController {
     }
 
 
-    @GetMapping("/messages/{channelId")
-    public List<Message> getMessagesByChannelId(Integer channelId){
+    @GetMapping("/messages/{channelId}")
+    public List<Message> getMessagesByChannelId(@PathVariable Integer channelId){
         return messageService.getMessageByChannel(channelId);
     }
 
