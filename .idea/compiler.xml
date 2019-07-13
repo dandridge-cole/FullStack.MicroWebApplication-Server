@@ -9,7 +9,7 @@
         <module name="TCPProject" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="TCPProject" target="1.8" />
     </bytecodeTargetLevel>
   </component>

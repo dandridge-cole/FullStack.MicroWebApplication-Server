@@ -14,6 +14,7 @@
 .workspace.xml
 .project
 .classpath
+.workspace.xml
 .c9/
 *.launch
 .settings/
