@@ -1,0 +1,14 @@
+<h2>Channels</h2>
+<ul class="channels">
+  <li *ngFor="let channel of channels"
+  [class.selected]="channel === selectedChannel"
+      (click)="onChannelSelect(channel)"><span class="badge">{{channel.name}}</span>
+  </li>
+</ul>
+<hr />
+<ul class="channels">
+  <li *ngFor="let user of users"
+      [class.selected]="user === selectedUser"
+      (click)="onUserSelect(user)"><span class="badge">{{user.name}}</span>
+  </li>
+</ul>
