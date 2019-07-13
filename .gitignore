@@ -12,6 +12,8 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+.DS_Store
+.gitignore
 
 # Package Files #
 *.jar
