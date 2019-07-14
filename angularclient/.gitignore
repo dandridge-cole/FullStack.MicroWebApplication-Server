@@ -11,12 +11,15 @@
 
 # IDEs and editors
 /.idea
+.workspace.xml
 .project
 .classpath
+.workspace.xml
 .c9/
 *.launch
 .settings/
 *.sublime-workspace
+
 
 # IDE - VSCode
 .vscode/*

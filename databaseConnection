@@ -1,0 +1,6 @@
+var connection = mysql.createConnection({
+  host     : 'us-cdbr-iron-east-02.cleardb.net',
+  user     : 'b61809904eef7c’,
+  password : 'bc4e0836',
+  database : 'heroku_884cbef5c97b2c4’
+});
