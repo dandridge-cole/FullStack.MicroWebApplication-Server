@@ -4,7 +4,8 @@ import { MessageListComponent} from "./message-list/message-list.component";
 import { MessageComposeComponent} from "./message-compose/message-compose.component";
 
 const routes: Routes = [
-  { path: 'messages', component: MessageComposeComponent}
+  { path: 'messages', component: MessageComposeComponent},
+  { path: 'messages', component: MessageListComponent}
 ];
 
 @NgModule({
