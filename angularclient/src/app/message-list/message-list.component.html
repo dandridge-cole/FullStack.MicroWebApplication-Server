@@ -1,0 +1,18 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">From</th>
+        <th scope="col">Content</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let message of messages">
+        <td>{{ message.fromUserId }}</td>
+        <td>{{ message.body }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
