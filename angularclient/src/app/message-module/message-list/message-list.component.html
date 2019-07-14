@@ -1,0 +1,22 @@
+<div class="container" style="float: right; width: 70%">
+<div class="card my-5">
+  <div class="card-body">
+    <div style="height: 70%; overflow: auto" >
+    <table class="table table-fixed table-bordered table-striped ">
+      <thead class="thead-dark ">
+      <tr>
+        <th class="col-xs-2">From</th><th class="col-xs-8">Content</th>
+      </tr>
+      </thead>
+      <tbody >
+      <tr *ngFor="let message of messages">
+        <td>{{ message.fromUserId }}</td>
+        <td>{{ message.body }}</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+</div>
+

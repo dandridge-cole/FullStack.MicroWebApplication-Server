@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ActivatedRoute, Router} from "@angular/router";
 import { MessageService} from "../messageService";
 import {Message} from "../message";
-import {MessageListComponent} from "../message-list/message-list.component";
+
 
 @Component({
   selector: 'app-message-compose',
@@ -12,18 +12,18 @@ import {MessageListComponent} from "../message-list/message-list.component";
 export class MessageComposeComponent implements OnInit {
 
   message: Message;
-
+  @Output() updateMessages = new EventEmitter();
 
 
   constructor(private route: ActivatedRoute, private router: Router, private messageService: MessageService) {
     this.message = new Message();
 
-
   }
 
   onSubmit(){
-    this.messageService.save(this.message).subscribe(result => console.log("test"));
 
+    this.messageService.save(this.message).subscribe(() => console.log("test"));
+      this.updateMessages.emit(this.message)
 
   }
 
