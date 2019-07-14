@@ -1,5 +1,5 @@
 
 
-<app-message-list #messageListComponent></app-message-list>
+<app-message-list #messageListComponent style="overflow: scroll"></app-message-list>
   <app-message-compose #messageComposeComponent (updateMessages)="messageListComponent.updateMessageList(messageComposeComponent.message)">
 </app-message-compose>

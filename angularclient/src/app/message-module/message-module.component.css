@@ -3,6 +3,7 @@ app-message-compose {
   bottom:8px;
   height:30px;
   width:100%;
+
 }
 app-message-list {
   overflow-y: auto;
