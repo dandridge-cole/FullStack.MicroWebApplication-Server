@@ -1,5 +1,10 @@
 
 
-<app-message-list #messageListComponent style="overflow: scroll"></app-message-list>
+<table>
+  <tr>
+    <td width="30%"><app-channellist #channelListComponent></app-channellist></td>
+    <td width="70%"><app-message-list #messageListComponent style="overflow: scroll"></app-message-list></td>
+  </tr>
+</table>
   <app-message-compose #messageComposeComponent (updateMessages)="messageListComponent.updateMessageList(messageComposeComponent.message)">
 </app-message-compose>
