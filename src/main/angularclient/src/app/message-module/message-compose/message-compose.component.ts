@@ -15,18 +15,30 @@ export class MessageComposeComponent implements OnInit {
   @Output() updateMessages = new EventEmitter();
 
 
+
   constructor(private route: ActivatedRoute, private router: Router, private messageService: MessageService) {
     this.message = new Message();
 
   }
 
-  onSubmit(){
-
-    this.messageService.save(this.message).subscribe();
-      this.updateMessages.emit(this.message)
-
+  async onSubmit(){
+    this.saveMessage();
+    await this.delay(500);
+    this.sendEmit();
   }
 
+  delay(ms: number){
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+
+  sendEmit(){
+    this.updateMessages.emit(this.message);
+  }
+
+  saveMessage(){
+    this.messageService.save(this.message).subscribe();
+  }
 
   ngOnInit() {
 
