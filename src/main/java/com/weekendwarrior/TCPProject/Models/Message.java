@@ -14,6 +14,7 @@ public class Message {
     private Integer fromUserId;
     private Integer toChannelId;
     private String body;
+    private String fromUsername;
 
     public Message() {
     }
@@ -49,4 +50,8 @@ public class Message {
     public void setBody(String body) {
         this.body = body;
     }
+
+    public String getFromUsername() {return fromUsername;}
+
+    public void setFromUsername(String fromUsername) {this.fromUsername = fromUsername;}
 }
