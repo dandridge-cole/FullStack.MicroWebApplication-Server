@@ -4,6 +4,8 @@
 # intellij
 .idea
 .idea/workspace.iml
+*.iml
+target
 
 # Log file
 *.log
@@ -23,6 +25,10 @@
 *.zip
 *.tar.gz
 *.rar
+
+#angular files#
+src/main/angularclient/node_modules
+src/main/angularclient/dist
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
