@@ -22,7 +22,7 @@ export class MessageComposeComponent implements OnInit {
 
   onSubmit(){
 
-    this.messageService.save(this.message).subscribe(() => console.log("test"));
+    this.messageService.save(this.message).subscribe();
       this.updateMessages.emit(this.message)
 
   }

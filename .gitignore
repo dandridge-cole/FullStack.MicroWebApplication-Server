@@ -4,6 +4,8 @@
 # intellij
 .idea
 .idea/workspace.iml
+*.iml
+target
 
 # Log file
 *.log
