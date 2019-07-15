@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Message} from "../message";
 import { MessageService} from "../messageService";
 
@@ -11,6 +11,7 @@ export class MessageListComponent implements OnInit {
 
   messages: Message[];
   selectedChannel: number;
+  @Output() updateChannelNumber = new EventEmitter;
 
 
   constructor(private messageService: MessageService) { this.selectedChannel=2;}
@@ -22,6 +23,7 @@ export class MessageListComponent implements OnInit {
 
    updateMessageList(){
       this.messageService.findAll(this.selectedChannel).subscribe(data => this.messages = data);
+      this.updateChannelNumber.emit(null);
 
   }
 
