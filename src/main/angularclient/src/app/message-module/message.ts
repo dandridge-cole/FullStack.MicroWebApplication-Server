@@ -1,9 +1,10 @@
-import {Channel} from "../channel";
+
+import {Input} from "@angular/core";
 
 export class Message{
   id: number;
   fromUserId: number;
-  toChannelId: number;
+  @Input() toChannelId;
   body: string;
   fromUsername: string;
 
@@ -13,8 +14,6 @@ export class Message{
     this.fromUserId = 2;
     this.fromUsername = "corby";
     this.toChannelId = 2;
-
-
   }
 
 

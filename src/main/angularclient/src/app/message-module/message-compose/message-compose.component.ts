@@ -13,6 +13,7 @@ export class MessageComposeComponent implements OnInit {
 
   message: Message;
   @Output() updateMessages = new EventEmitter();
+  channelNumber: number;
 
 
 
@@ -22,8 +23,9 @@ export class MessageComposeComponent implements OnInit {
   }
 
   async onSubmit(){
+    this.message.updateChannel(this.channelNumber);
     this.saveMessage();
-    await this.delay(500);
+    await this.delay(200);
     this.sendEmit();
   }
 
@@ -32,7 +34,8 @@ export class MessageComposeComponent implements OnInit {
   }
 
 
-  sendEmit(){
+  async sendEmit(){
+    console.log(this.message);
     this.updateMessages.emit(this.message);
   }
 
@@ -40,8 +43,12 @@ export class MessageComposeComponent implements OnInit {
     this.messageService.save(this.message).subscribe();
   }
 
-  ngOnInit() {
+  updateChannelNumber(channelNumber: number){
+    this.channelNumber=channelNumber;
+  }
 
+  ngOnInit() {
+    this.channelNumber = 2;
   }
 
 }
