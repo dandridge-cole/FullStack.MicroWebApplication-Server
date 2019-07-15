@@ -1,3 +1,5 @@
+import {Channel} from "../channel";
+
 export class Message{
   id: number;
   fromUserId: number;
@@ -16,5 +18,8 @@ export class Message{
   }
 
 
+  updateChannel(channelId: number){
+    this.toChannelId=channelId;
+  }
 
 }
