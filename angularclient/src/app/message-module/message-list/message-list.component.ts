@@ -10,26 +10,23 @@ import { MessageService} from "../messageService";
 export class MessageListComponent implements OnInit {
 
   messages: Message[];
+  selectedChannel: number;
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService) { this.selectedChannel=2;}
 
   ngOnInit() {
-    this.messageService.findAll(1).subscribe(data => this.messages = data)
+    this.messageService.findAll(this.selectedChannel).subscribe(data => this.messages = data)
 
   }
 
   updateMessageList(messageToAdd: Message){
-    this.messageService.findAll(2).subscribe(data => this.messages = data);
+    this.messageService.findAll(this.selectedChannel).subscribe(data => this.messages = data);
     this.messages.push(messageToAdd);
-
-
-
-
-
-
   }
 
-
-
+  updateSelectedChannel(channel:number){
+    this.selectedChannel=channel;
+    this.messageService.findAll(channel).subscribe(data=>this.messages=data);
+  }
 
 }

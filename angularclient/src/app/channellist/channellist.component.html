@@ -13,7 +13,7 @@
   <tr style="height:50%">
     <td>
       <h6>Users</h6>
-      <ul class="users">
+      <ul class="channels">
         <li *ngFor="let user of users"
             [class.selected]="user === selectedUser"
             (click)="onUserSelect(user)"><span class="badge">{{user.username}}</span>
