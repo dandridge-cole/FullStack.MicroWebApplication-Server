@@ -12,6 +12,7 @@ export class MessageListComponent implements OnInit {
   messages: Message[];
   selectedChannel: number;
 
+
   constructor(private messageService: MessageService) { this.selectedChannel=2;}
 
   ngOnInit() {
@@ -21,7 +22,7 @@ export class MessageListComponent implements OnInit {
 
   updateMessageList(messageToAdd: Message){
     this.messageService.findAll(this.selectedChannel).subscribe(data => this.messages = data);
-    this.messages.push(messageToAdd);
+
   }
 
   updateSelectedChannel(channel:number){

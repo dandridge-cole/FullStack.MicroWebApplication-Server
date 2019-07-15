@@ -2,7 +2,8 @@
 
 <table width="100%">
   <tr>
-    <td class="align-top" width="30%" style="padding-top:70px;padding-left:15px"><app-channellist #channelListComponent></app-channellist></td>
+    <td class="align-top" width="30%" style="padding-top:70px;padding-left:15px"><app-channellist
+      #channelListComponent (updateOtherModules)="messageListComponent.updateSelectedChannel(channelListComponent.selectedChannel.id)"></app-channellist></td>
     <td width="70%"><app-message-list #messageListComponent style="overflow: scroll" ></app-message-list></td>
   </tr>
 </table>

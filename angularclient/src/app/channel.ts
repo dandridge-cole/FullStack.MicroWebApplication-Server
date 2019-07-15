@@ -7,4 +7,8 @@ export class Channel {
   constructor(){
     this.selectedChannel = 1;
   }
+
+  updateId(idNumber :number) {
+    this.id=idNumber;
+  }
 }
