@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Channel} from '../channel';
 import {User} from '../user';
+import {MessageService} from "../message-module/messageService";
+import {UserService} from "./userService";
+import {ChannelService} from "./channelService";
 
 @Component({
   selector: 'app-channellist',
@@ -8,19 +11,19 @@ import {User} from '../user';
   styleUrls: ['./channellist.component.css']
 })
 export class ChannellistComponent implements OnInit {
-  // channels = CHANNELS;
-  // users = USERS;
+   channels: Channel[];
+   users: User[];
 
   selectedChannel: Channel;
   selectedUser: User;
 
 
-  constructor() { }
+  constructor(private userService: UserService, private channelService: ChannelService) { }
 
   ngOnInit() {
-
+    this.userService.findAll().subscribe(data => this.users = data)
+    this.channelService.findAll().subscribe(data => this.channels = data)
   }
-
 
   onChannelSelect(channel: Channel): void{
     this.selectedChannel=channel;
@@ -30,7 +33,5 @@ export class ChannellistComponent implements OnInit {
     this.selectedChannel=null;
     this.selectedUser=user;
   }
-
-
 
 }
