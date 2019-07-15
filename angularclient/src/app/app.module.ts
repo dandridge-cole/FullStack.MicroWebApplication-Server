@@ -10,6 +10,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {MessageService} from "./message-module/messageService";
 import { MessageModuleComponent } from './message-module/message-module.component';
+import {UserService} from "./channellist/userService";
+import {ChannelService} from "./channellist/channelService";
 
 
 @NgModule({
@@ -29,7 +31,7 @@ import { MessageModuleComponent } from './message-module/message-module.componen
     HttpClientModule,
     FormsModule
   ],
-  providers: [MessageService],
+  providers: [MessageService,UserService,ChannelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

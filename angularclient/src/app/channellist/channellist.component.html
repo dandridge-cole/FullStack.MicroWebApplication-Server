@@ -1,14 +1,24 @@
-<h2>Channels</h2>
-<ul class="channels">
-  <li *ngFor="let channel of channels"
-  [class.selected]="channel === selectedChannel"
-      (click)="onChannelSelect(channel)"><span class="badge">{{channel.name}}</span>
-  </li>
-</ul>
-<hr />
-<ul class="channels">
-  <li *ngFor="let user of users"
-      [class.selected]="user === selectedUser"
-      (click)="onUserSelect(user)"><span class="badge">{{user.name}}</span>
-  </li>
-</ul>
+<table class="table table-fixed table-bordered table-striped" style="height:100%">
+  <tr style="height:50%">
+    <td>
+      <h6>Channels</h6>
+      <ul class="channels">
+        <li *ngFor="let channel of channels"
+        [class.selected]="channel === selectedChannel"
+            (click)="onChannelSelect(channel)"><span class="badge">{{channel.name}}</span>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr style="height:50%">
+    <td>
+      <h6>Users</h6>
+      <ul class="users">
+        <li *ngFor="let user of users"
+            [class.selected]="user === selectedUser"
+            (click)="onUserSelect(user)"><span class="badge">{{user.name}}</span>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>

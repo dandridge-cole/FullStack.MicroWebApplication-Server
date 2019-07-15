@@ -21,13 +21,13 @@ public class ChannelController {
         this.channelService = channelService;
     }
 
-    @GetMapping
+    @GetMapping("/channels")
     public List<Channel> getAllChannels(){
         return channelService.getAllChannels();
 
     }
 
-    @GetMapping("/channel/{id}")
+    @GetMapping("/channels/{id}")
     public Channel getChannelById(@PathVariable Integer id){
      return channelService.getChannelById(id);
 
