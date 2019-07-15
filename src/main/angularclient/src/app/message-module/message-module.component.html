@@ -7,5 +7,5 @@
     <td width="70%"><app-message-list #messageListComponent style="overflow: scroll" ></app-message-list></td>
   </tr>
 </table>
-  <app-message-compose #messageComposeComponent (updateMessages)="messageListComponent.updateMessageList(messageComposeComponent.message)">
+  <app-message-compose #messageComposeComponent (updateMessages)="messageListComponent.updateMessageList()">
 </app-message-compose>

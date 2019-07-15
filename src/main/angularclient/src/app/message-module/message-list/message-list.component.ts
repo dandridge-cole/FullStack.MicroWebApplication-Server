@@ -20,8 +20,8 @@ export class MessageListComponent implements OnInit {
 
   }
 
-  updateMessageList(messageToAdd: Message){
-    this.messageService.findAll(this.selectedChannel).subscribe(data => this.messages = data);
+   updateMessageList(){
+      this.messageService.findAll(this.selectedChannel).subscribe(data => this.messages = data);
 
   }
 
