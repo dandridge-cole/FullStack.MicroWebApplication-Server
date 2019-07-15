@@ -4,9 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-
-import static org.junit.Assert.*;
-
 public class UserTest {
 
     private User user;
@@ -31,14 +28,14 @@ public class UserTest {
 
     @Test
     public void getUserNameNull() {
-        Assert.assertNull(this.user.getUserName());
+        Assert.assertNull(this.user.getUsername());
     }
 
     @Test
     public void setUserName() {
         String expected = "username";
-        this.user.setUserName(expected);
-        String actual = this.user.getUserName();
+        this.user.setUsername(expected);
+        String actual = this.user.getUsername();
         Assert.assertEquals(expected,actual);
     }
 
