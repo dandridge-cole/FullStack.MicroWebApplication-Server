@@ -3,12 +3,14 @@ export class Message{
   fromUserId: number;
   toChannelId: number;
   body: string;
+  fromUsername: string;
 
 
   constructor(){
 
-    this.fromUserId = 1;
-    this.toChannelId = 1;
+    this.fromUserId = 2;
+    this.fromUsername = "corby";
+    this.toChannelId = 2;
 
 
   }
