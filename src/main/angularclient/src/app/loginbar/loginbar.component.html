@@ -10,25 +10,37 @@
       </button>
     </div>
   </div>
-  <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
+
+  <div *ngIf="userIsAuthenticated === false"  class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
     <ul class="navbar-nav ml-auto flex-nowrap">
       <li class="nav-item">
         <form class="form-inline my-2 my-md-0">
-          <input class="form-control" type="text" placeholder="User Name">
+          <input #userNameField id="userUserName" class="form-control" type="text" placeholder="User Name" [(ngModel)]="userToAuth.username" name="username">
+          <a class="clear" (click)="userToAuth.username=null">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
         </form>
       </li>
       <li class="nav-item">
         <form class="form-inline my-2 my-md-0">
-          <input class="form-control" type="text" placeholder="Password">
+          <input #passwordField id="userPasswordBox" class="form-control" type="text" placeholder="Password" [(ngModel)]="userToAuth.password" name="password">
+          <a class="clear" (click)="userToAuth.password=null">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
         </form>
       </li>
       <li class="nav-item">
-        <button type = "button">
+        <button class="btn btn-outline-success my-2 my-sm-0" type = "button" (click)="onLogin(); ">
           Login
         </button>
       </li>
 
     </ul>
+  </div>
+  <div  *ngIf="userIsAuthenticated === true">
+    <a class="navbar-brand navbar-right" href="#">
+      Welcome {{userReturned.username}}
+    </a>
   </div>
 </nav>
 

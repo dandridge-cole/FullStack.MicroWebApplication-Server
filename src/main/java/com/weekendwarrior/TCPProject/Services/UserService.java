@@ -5,6 +5,7 @@ import com.weekendwarrior.TCPProject.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Service
@@ -24,4 +25,10 @@ public class UserService {
     public User getById(Integer id){
         return this.userRepository.getById(id);
     }
+
+    public User authenticateUser(String username, String password) {
+        return this.userRepository.authenticateUser(username, password);
+    }
+
+
 }

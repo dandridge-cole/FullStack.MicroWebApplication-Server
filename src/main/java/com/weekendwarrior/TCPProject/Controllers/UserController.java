@@ -3,11 +3,9 @@ package com.weekendwarrior.TCPProject.Controllers;
 import com.weekendwarrior.TCPProject.Models.User;
 import com.weekendwarrior.TCPProject.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -30,4 +28,12 @@ public class UserController {
     public User getUserById(@PathVariable Integer id){
         return this.userService.getById(id);
     }
+
+    @GetMapping("/users/auth/{username}/{password}")
+    public User authenticateUser(@PathVariable String username, @PathVariable String password) {
+        return this.userService.authenticateUser(username, password);
+    }
+
+
+
 }
