@@ -1,11 +1,14 @@
 <div class="container" style="float: right; width: 70%">
 <div class="input-group">
 
-  <input id="messageBody" type="text" class="form-control" [(ngModel)]="message.body" name="messageBody" placeholder="Please enter a message to send."
+  <input #messageField id="messageToClear" type="text" class="form-control" [(ngModel)]="message.body" name="messageBody" placeholder="Please enter a message to send."
   #body = "ngModel">
+  <a class="clear" (click)="message.body=null">
+    <span class="glyphicon glyphicon-remove"></span>
+  </a>
 
   <div class="input-group-append">
-    <button (click)="onSubmit()"  type="button" class="btn btn-dark">Send</button>
+    <button (click)="onSubmit(); clearField()"  type="button" class="btn btn-dark">Send</button>
   </div>
 
 </div>

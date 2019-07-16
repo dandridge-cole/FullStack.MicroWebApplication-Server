@@ -16,6 +16,7 @@ public class User {
     private String username;
     private Boolean authenticated;
 
+
     public User() {
     }
 
@@ -42,4 +43,6 @@ public class User {
     public void setAuthenticated(Boolean authenticated) {
         this.authenticated = authenticated;
     }
+
+
 }
