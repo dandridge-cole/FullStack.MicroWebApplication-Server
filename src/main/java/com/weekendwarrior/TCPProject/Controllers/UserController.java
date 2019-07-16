@@ -1,12 +1,10 @@
 package com.weekendwarrior.TCPProject.Controllers;
 
-import com.weekendwarrior.TCPProject.Models.AuthenticationRequest;
 import com.weekendwarrior.TCPProject.Models.User;
 import com.weekendwarrior.TCPProject.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @RestController
