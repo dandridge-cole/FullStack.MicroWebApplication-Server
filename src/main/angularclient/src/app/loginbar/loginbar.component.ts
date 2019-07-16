@@ -17,17 +17,19 @@ export class LoginbarComponent implements OnInit {
   @ViewChild("passwordField") passwordField: ElementRef;
   @ViewChild("userNameField") userNameField: ElementRef;
   @Output() updateMessageComponents = new EventEmitter();
+  newUserModal: boolean;
+  showNavBar: boolean;
 
   constructor(private userService: UserService) {
     this.userToAuth = new User();
     this.userIsAuthenticated = false;
+    this.newUserModal = false;
+    this.showNavBar = true;
 
   }
 
   ngOnInit() {
   }
-
-
 
 
   async onLogin() {
@@ -40,14 +42,28 @@ export class LoginbarComponent implements OnInit {
     this.clearField();
     }
 
-  async sendEmit(){
-    this.updateMessageComponents.emit(this.userReturned);
-  }
+
 
   clearField(){
     this.passwordField.nativeElement.value = '';
     this.userNameField.nativeElement.value = '';
   }
+
+  updateNewUserModal(){
+    if(this.newUserModal === false){
+      this.newUserModal = true;
+      this.showNavBar = false;
+    }else{this.newUserModal = false;
+    this.showNavBar=true;}
+  }
+
+   async createNewUser(){
+    console.log(this.userToAuth);
+    this.userService.createNewUser(this.userToAuth);
+    this.updateNewUserModal();
+
+  }
+
 
 
 }

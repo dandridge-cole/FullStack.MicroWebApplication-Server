@@ -1,5 +1,6 @@
 package com.weekendwarrior.TCPProject.Controllers;
 
+import com.weekendwarrior.TCPProject.Models.AuthenticationRequest;
 import com.weekendwarrior.TCPProject.Models.User;
 import com.weekendwarrior.TCPProject.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,13 @@ public class UserController {
     }
 
     @GetMapping("/users/auth/{username}/{password}")
-    public User authenticateUser(@PathVariable String username, @PathVariable String password) {
+    public User authenticateUser(@PathVariable String password, @PathVariable String username) {
         return this.userService.authenticateUser(username, password);
+    }
+
+    @PostMapping("/users")
+    public User createNewUser(@RequestBody User newUser){
+        return this.userService.createUser(newUser);
     }
 
 
