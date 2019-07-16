@@ -1,5 +1,6 @@
 
 import {Input} from "@angular/core";
+import {User} from "../user";
 
 export class Message{
   id: number;
@@ -19,6 +20,11 @@ export class Message{
 
   updateChannel(channelId: number){
     this.toChannelId=channelId;
+  }
+
+  updateFrom(user:User){
+    this.fromUsername = user.username;
+    this.fromUserId = user.id;
   }
 
 }

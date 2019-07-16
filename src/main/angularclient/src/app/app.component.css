@@ -1,1 +1,11 @@
 
+app-message-compose {
+  position:fixed;
+  bottom:8px;
+  height:30px;
+  width:100%;
+
+}
+app-message-list {
+  overflow-y: auto;
+}
