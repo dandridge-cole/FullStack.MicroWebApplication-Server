@@ -15,16 +15,22 @@
     <ul class="navbar-nav ml-auto flex-nowrap">
       <li class="nav-item">
         <form class="form-inline my-2 my-md-0">
-          <input id="userUserName" class="form-control" type="text" placeholder="User Name" [(ngModel)]="userToAuth.username" name="username">
+          <input #userNameField id="userUserName" class="form-control" type="text" placeholder="User Name" [(ngModel)]="userToAuth.username" name="username">
+          <a class="clear" (click)="userToAuth.username=null">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
         </form>
       </li>
       <li class="nav-item">
         <form class="form-inline my-2 my-md-0">
-          <input id="userPassword" class="form-control" type="text" placeholder="Password" [(ngModel)]="userToAuth.password" name="password">
+          <input #passwordField id="userPasswordBox" class="form-control" type="text" placeholder="Password" [(ngModel)]="userToAuth.password" name="password">
+          <a class="clear" (click)="userToAuth.password=null">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
         </form>
       </li>
       <li class="nav-item">
-        <button class="btn btn-outline-success my-2 my-sm-0" type = "button" (click)="onLogin()">
+        <button class="btn btn-outline-success my-2 my-sm-0" type = "button" (click)="onLogin(); ">
           Login
         </button>
       </li>
@@ -32,7 +38,9 @@
     </ul>
   </div>
   <div  *ngIf="userIsAuthenticated === true">
-    <input id="userPassword" class="form-control" type="text" placeholder="Password">
+    <a class="navbar-brand navbar-right" href="#">
+      Welcome {{userReturned.username}}
+    </a>
   </div>
 </nav>
 

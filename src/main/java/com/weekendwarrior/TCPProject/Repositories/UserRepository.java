@@ -16,12 +16,6 @@ public interface UserRepository  extends JpaRepository<User, Integer> {
 
     public User getById(Integer id);
 
-//
-//    @Query(value = "SELECT * FROM todos t WHERE " +
-//            "LOWER(t.title) LIKE LOWER(CONCAT('%',:searchTerm, '%')) OR " +
-//            "LOWER(t.description) LIKE LOWER(CONCAT('%',:searchTerm, '%'))",
-//            nativeQuery = true)
-
 
 
     @Query(value = "SELECT * FROM heroku_884cbef5c97b2c4.user t where t.username = :username and t.password = :password",
