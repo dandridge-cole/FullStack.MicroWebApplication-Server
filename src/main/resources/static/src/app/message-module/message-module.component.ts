@@ -9,7 +9,6 @@ import {Input} from "@angular/core/src/metadata/directives";
 })
 export class MessageModuleComponent implements OnInit {
 
-  selectedChannelId: number;
 
   constructor() { }
 

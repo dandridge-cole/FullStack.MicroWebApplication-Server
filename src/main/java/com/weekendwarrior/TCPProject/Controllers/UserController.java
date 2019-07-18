@@ -5,7 +5,6 @@ import com.weekendwarrior.TCPProject.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -30,8 +29,13 @@ public class UserController {
     }
 
     @GetMapping("/users/auth/{username}/{password}")
-    public User authenticateUser(@PathVariable String username, @PathVariable String password) {
+    public User authenticateUser(@PathVariable String password, @PathVariable String username) {
         return this.userService.authenticateUser(username, password);
+    }
+
+    @PostMapping("/users")
+    public User createNewUser(@RequestBody User newUser){
+        return this.userService.createUser(newUser);
     }
 
 
