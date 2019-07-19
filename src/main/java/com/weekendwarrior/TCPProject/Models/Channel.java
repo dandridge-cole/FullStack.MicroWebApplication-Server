@@ -1,9 +1,7 @@
 package com.weekendwarrior.TCPProject.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Channel {
@@ -13,6 +11,10 @@ public class Channel {
     private String name;
     private boolean direct;
 
+    /*
+    @OneToMany
+    List<User> channelMembers;
+*/
     public Channel(){
 
     }
@@ -34,8 +36,8 @@ public class Channel {
         this.name = name;
     }
 
-    public boolean isDirect() {
-        return direct;
+    public boolean getDirect() {
+        return this.direct;
     }
 
     public void setDirect(boolean direct) {

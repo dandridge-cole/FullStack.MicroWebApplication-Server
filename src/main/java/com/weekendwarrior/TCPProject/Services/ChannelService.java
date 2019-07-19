@@ -22,8 +22,21 @@ public class ChannelService {
     }
 
     public Channel getChannelById(Integer id){
-
         return channelRepository.getById(id);
     }
+/*
+    public Channel getDirectChannel(Integer user1, Integer user2){
+        List<Channel> directChannels = getDirectChannels();
+        for (Channel channel:directChannels){
 
+        }
+        Channel checkChannel = channelRepository.getDirectChannel(user1,user2);
+        if(checkChannel!=null)return checkChannel;
+        return channelRepository.createDirectChannel(user1,user2);
+    }
+
+    public List<Channel> getDirectChannels(){
+        return channelRepository.getChannelsByDirectIsTrue();
+    }
+*/
 }
