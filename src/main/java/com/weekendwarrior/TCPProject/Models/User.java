@@ -8,9 +8,10 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private String password;
     private String username;
 
     @Transient
@@ -21,6 +22,15 @@ public class User {
     List<Channel> channelList;
 */
     public User() {
+        authenticated = null;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Integer getId() {

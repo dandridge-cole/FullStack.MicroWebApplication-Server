@@ -13,6 +13,7 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
+
     public UserService(UserRepository userRepository) {
         this.userRepository=userRepository;
     }
@@ -24,4 +25,15 @@ public class UserService {
     public User getById(Integer id){
         return this.userRepository.getById(id);
     }
+
+    public User authenticateUser(String userName, String password) {
+        return userRepository.authenticateUser(userName, password);
+    }
+
+    public User createUser(User user){
+        System.out.println(user);
+        return userRepository.save(user);
+    }
+
+
 }
