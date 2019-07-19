@@ -24,16 +24,16 @@ public class ChannelController {
     @GetMapping("/channels")
     public List<Channel> getAllChannels(){
         return channelService.getAllChannels();
-
     }
 
     @GetMapping("/channels/{id}")
     public Channel getChannelById(@PathVariable Integer id){
-     return channelService.getChannelById(id);
-
+        return channelService.getChannelById(id);
     }
-
-
-
+/*
+    @GetMapping("/channels/{user1}/{user2}")
+    public Channel getDirectChannel(@PathVariable Integer user1, @PathVariable Integer user2){
+        return channelService.getDirectChannel(user1,user2);
+    }*/
 
 }

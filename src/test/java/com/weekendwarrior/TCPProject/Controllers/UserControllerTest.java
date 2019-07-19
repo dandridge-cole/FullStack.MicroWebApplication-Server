@@ -1,7 +1,7 @@
 package com.weekendwarrior.TCPProject.Controllers;
 
 import com.weekendwarrior.TCPProject.Models.User;
-import com.weekendwarrior.TCPProject.Repositories.UserRepository;
+import com.weekendwarrior.TCPProject.Services.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 public class UserControllerTest {
 
     @Mock
-    private UserRepository userRepository;
+    private UserService userService;
 
     @InjectMocks
     private UserController userController;
@@ -26,7 +26,8 @@ public class UserControllerTest {
     public void getAllUsers() {
         when(userController.getAllUsers()).thenReturn(subData());
         userController.getAllUsers();
-        verify(userRepository, times(1)).findAll();
+       // verify(userRepository, times(1)).findAll();
+        verify(userService, times(1)).getAllUsers();
     }
 
     @Test

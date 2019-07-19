@@ -1,10 +1,8 @@
 package com.weekendwarrior.TCPProject.Models;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -15,9 +13,14 @@ public class User {
 
     private String password;
     private String username;
+
+    @Transient
     private Boolean authenticated;
 
-
+    /*
+    @OneToMany
+    List<Channel> channelList;
+*/
     public User() {
         authenticated = null;
     }
@@ -30,7 +33,9 @@ public class User {
         this.password = password;
     }
 
-    public Integer getId() { return id; }
+    public Integer getId() {
+        return id;
+    }
 
     public void setId(Integer id) {
         this.id = id;
@@ -51,5 +56,4 @@ public class User {
     public void setAuthenticated(Boolean authenticated) {
         this.authenticated = authenticated;
     }
-
 }

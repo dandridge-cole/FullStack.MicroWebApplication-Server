@@ -14,11 +14,11 @@ CREATE TABLE tcpproj.channels(
 
 CREATE TABLE tcpproj.messages(
 	id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    fromUser INTEGER,
-    toChannel INTEGER,
+    from_user INTEGER,
+    to_channel INTEGER,
     body VARCHAR(255),
-    FOREIGN KEY(fromUser) REFERENCES users(id),
-    FOREIGN KEY(toChannel) REFERENCES channels(id)
+    FOREIGN KEY(from_user) REFERENCES users(id),
+    FOREIGN KEY(to_channel) REFERENCES channels(id)
 );
 
 CREATE TABLE tcpproj.channel_user(
